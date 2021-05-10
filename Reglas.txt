@@ -1,0 +1,11 @@
+condicion,estado
+CovidPositivo,NoPuedeSalir
+SospechosoCovid,PorDefecto
+CovidNegativo,PorDefecto
+ContactoEstrechoPositivo,NoPuedeSalir
+ContactoEstrechoSospechoso,NoPuedeSalir
+PersonalEsencial,PuedeSalir
+PersonalDeRiesgo,NoPuedeSalir
+Vacunado,PuedeSalir
+NoVacunado,PorDefecto
+Defecto,NoPuedeSalir
