@@ -1,0 +1,25 @@
+@startuml
+
+
+class AlgoVid{
+	+nuevaPersona(nombre:String)
+	+puedeCircular(nombre:String)
+	+estaVacunadx(nombre:String)
+}
+class Persona{
+	+puedeCircular(nombre:String)
+	+estaVacunadx()
+}
+interface Condicion{
+	puedeCircular()
+}
+interface Permiso{
+	puedeCircular()	
+}
+
+AlgoVid o-- "*" Persona : contiene >
+
+Persona *-- "*" Condicion : puede tener >
+
+Condicion --> Permiso
+@enduml

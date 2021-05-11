@@ -1,0 +1,23 @@
+@startuml
+
+
+class AlgoVid{
+	
+}
+class Persona{
+	
+}
+Interface "Permiso para Salir" as Estado{
+	
+}
+Interface Sintoma{
+	
+}
+
+AlgoVid o-- "*" Persona : contiene >
+
+Persona --> Estado : posee >
+
+Persona *-- "*" Sintoma : puede tener >
+
+@enduml

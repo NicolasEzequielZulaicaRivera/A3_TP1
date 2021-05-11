@@ -1,0 +1,23 @@
+@startuml
+
+
+class AlgoVid{
+	+agregarSintomaA( sintoma:String , persona:String )
+}
+class Persona{
+	+agregarSintoma( sintoma:String )
+}
+interface Condicion{
+
+}
+interface Sintoma{
+
+}
+
+AlgoVid o-- "*" Persona : contiene >
+
+Persona *-- "*" Sintoma : puede tener >
+
+Persona *-- "*" Condicion : puede tener >
+
+@enduml
