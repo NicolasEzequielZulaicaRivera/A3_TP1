@@ -1,0 +1,25 @@
+@startuml
+
+
+interface Permiso <<Interfaz>>{
+	{abstract}+puedeCircular():Bool
+	{abstract}+y(otroPermiso:Permiso):Permiso
+}
+class PuedeCircular{
+	+puedeCircular():Bool
+	+y(otroPermiso:Permiso):Permiso
+}
+class NoPuedeCircular{
+	+puedeCircular():Bool
+	+y(otroPermiso:Permiso):NoPuedeCircular
+}
+class DefectoCircular{
+	+puedeCircular():Bool
+	+y(otroPermiso:Permiso):Permiso
+}
+
+Permiso <|.. PuedeCircular
+Permiso <|.. NoPuedeCircular
+Permiso <|.. DefectoCircular
+
+@enduml

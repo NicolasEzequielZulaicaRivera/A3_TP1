@@ -1,0 +1,65 @@
+@startuml
+
+
+Interface "Condicion" as C1 <<Interfaz>>{
+	{abstract}+permisoCircular():Permiso
+}
+
+class CovidPositivo{
+	+permisoCircular():NoPuedeCircular
+}
+C1 <|-- CovidPositivo
+
+class CovidSospechoso{
+	+permisoCircular():NoPuedeCircular
+}
+C1 <|-- CovidSospechoso
+
+class CovidNegativo{
+	+permisoCircular():DefectoCircular
+}
+C1 <|-- CovidNegativo
+
+() C2 as " "
+C1 <|-- C2
+
+() C3 as " "
+C2 <|-- C3
+
+class ContactoEstrechoPositivo{
+	+permisoCircular():NoPuedeCircular
+}
+C2 <|-- ContactoEstrechoPositivo
+
+class ContactoEstrechoSospechoso{
+	+permisoCircular():NoPuedeCircular
+}
+C2 <|-- ContactoEstrechoSospechoso
+
+class ContactoEstrechoNegativo{
+	+permisoCircular():DefectoCircular
+}
+C2 <|-- ContactoEstrechoNegativo
+
+class PersonalEscencial{
+	+permisoCircular():PuedeCircular
+}
+C3 <|-- PersonalEscencial
+
+class PersonalDeRiesgo{
+	+permisoCircular():NoPuedeCircular
+}
+C3 <|-- PersonalDeRiesgo
+
+class Vacunado{
+	+permisoCircular():PuedeCircular
+}
+C3 <|-- Vacunado
+
+class NoVacunado{
+	+permisoCircular():DefectoCircular
+}
+C3 <|-- NoVacunado
+
+
+@enduml
