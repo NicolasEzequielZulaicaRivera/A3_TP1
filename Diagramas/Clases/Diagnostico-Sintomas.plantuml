@@ -1,0 +1,27 @@
+@startuml
+
+class Persona{
+	+ agregarSintoma( sintoma:String )
+	+ actualizarCondicionSegunSintomas()
+}
+class Diagnostico{
+	+ agregarSintoma( sintoma:String )
+	+ tiene(sintoma:String):Bool
+	+ condicionSegunSintomas():Condicion
+}
+abstract Sintoma{
+	- nombre
+	---
+	{abstract}+ esComun():Bool
+	+ es(sintoma:String):Bool
+	..
+	{static} nuevo( sintoma:String ): Sintoma
+}
+
+Persona "1" *-- "1" Diagnostico
+Diagnostico "1" *-- "*" Sintoma
+
+Sintoma <|-- SintomaComun
+Sintoma <|-- SintomaSinClasificar
+
+@enduml

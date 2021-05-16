@@ -1,0 +1,15 @@
+@startuml
+abstract EstadoDiagnostico{
+	{abstract}+ condicionSegunSintomas():Condicion
+	{abstract}+ estadoAlAgregarSintoma(sintoma:Sintoma):EstadoDiagnostico
+
+}
+
+EstadoDiagnostico <|-- EstadoSinSintomas
+EstadoDiagnostico <|-- EstadoConUnSintoma
+EstadoDiagnostico <|-- EstadoConDosSintomas
+EstadoDiagnostico <|-- EstadoConTresSintomas
+EstadoDiagnostico <|-- EstadoConCuatroOMasSintomas
+
+
+@enduml
